@@ -14,38 +14,39 @@ using UnityEngine;
 public class PlayerControls : MonoBehaviour
 {
 
-    public int liptype; // I need a way to change THIS VAR with whatever the array element is
+    public Sprite[] liptype; // I need a way to change THIS VAR with whatever the array element is
     // need to reference this line from lipspawner script:         GetComponent<SpriteRenderer>().sprite = Sprite_Pic[rand];
-    public Sprite[] spriteRef;
+    //public Sprite[] kissRef;
 
-    public LipScript lipspawner;
+    public int arrayVal; // to reference "rand" from other script
 
+    public lipspawner lipScript;
+
+    void Awake()
+    {
+        // using this for referencing other script: https://answers.unity.com/questions/42843/referencing-non-static-variables-from-another-scri.html
+        GameObject theLips = GameObject.Find("LipSpawner");
+        lipScript = theLips.GetComponent<lipspawner>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        liptype = gameObject.GetComponent<lipspawner>().rand;
-        //spriteRef = gameObject.GetComponent<lipspawner>().Sprite_Pic[0];
+        //liptype = gameObject.GetComponent<lipspawner>().Sprite_Pic;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(spriteRef[liptype] == spriteRef[0])
+        arrayVal = lipScript.rand;
+
+
+        if (arrayVal == 0)
         {
             Debug.Log("partner is KISSING");
-        } else if (liptype == 1)
-        {
-            Debug.Log("partner is RESTING");
-        } else {
-            Debug.Log("error");
         }
 
-
-        // // check which sprite is active on the screen
-        // --> you'll probably need to call the other script to do this
-            // check if the Arduino button is being pressed
-            // Then, play kiss sound and spawn hearts
+        
 
         if (Input.GetMouseButtonDown(0))
         {

@@ -446,6 +446,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2928158418765284270, guid: 5266fb368e0c44022b59bfad73c131df,
         type: 3}
+      propertyPath: spriteRef.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928158418765284270, guid: 5266fb368e0c44022b59bfad73c131df,
+        type: 3}
       propertyPath: lipspawner
       value: 
       objectReference: {fileID: 1724698960}
@@ -454,6 +459,12 @@ PrefabInstance:
       propertyPath: liptype
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2928158418765284270, guid: 5266fb368e0c44022b59bfad73c131df,
+        type: 3}
+      propertyPath: spriteRef.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 923b68a9a10cc45dbbb65f8eb341b22d,
+        type: 3}
     - target: {fileID: 5770881640382354603, guid: 5266fb368e0c44022b59bfad73c131df,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -537,7 +548,7 @@ PrefabInstance:
     - target: {fileID: 5432919860122727221, guid: 9cf326136905445ecaa83bdb2b35adf2,
         type: 3}
       propertyPath: m_Name
-      value: lipspawner
+      value: LipSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 5621659524698573868, guid: 9cf326136905445ecaa83bdb2b35adf2,
         type: 3}
